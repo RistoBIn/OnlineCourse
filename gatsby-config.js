@@ -1,3 +1,9 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
+
+const queries = require('./src/utils/algolia')
+
 module.exports = {
   pathPrefix: `/mini-gatsbyv2-material-kit-react`,
   siteMetadata: {
@@ -11,6 +17,16 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sass',
     'gatsby-plugin-material-ui',
+    {
+      resolve: 'gatsby-plugin-algolia',
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.GATSBY_ALGOLIA_ADMIN_KEY,
+        indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
+        queries,
+        chunkSize: 10000
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

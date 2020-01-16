@@ -17,6 +17,8 @@ import Menu from "@material-ui/icons/Menu";
 // core components
 import headerStyle from "assets/jss/material-kit-react/components/headerStyle.jsx";
 
+import Search from "../Search"
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -78,9 +80,9 @@ class Header extends React.Component {
     return (
       <AppBar className={appBarClasses}>
         <Toolbar className={classes.container}>
-          <div>
+          <div style={{width: "200px"}}>
             <Hidden smDown implementation="css">
-              Search
+              <Search />
             </Hidden>
           </div>
           <div>
@@ -88,10 +90,13 @@ class Header extends React.Component {
               {brandComponent}
             </Hidden>
           </div>
-            
-          <Hidden smDown implementation="css">
-            Login
-          </Hidden>
+          <div style={{width: "200px", textAlign: "right"}}>
+            <Hidden smDown implementation="css">
+              <Link to="/admin">
+                Login
+              </Link>
+            </Hidden>
+          </div>
           <Hidden mdUp>
             <div className={classes.flex}>
               <h2>Online Course</h2>
@@ -116,7 +121,9 @@ class Header extends React.Component {
             onClose={this.handleDrawerToggle}
           >
             <div className={classes.appResponsive}>
-              Login
+              <Link to="/admin">
+                Login
+              </Link>
             </div>
           </Drawer>
         </Hidden>
