@@ -4,7 +4,7 @@ const coursePageStyle = {
   container: {
     zIndex: "12",
     color: "black",
-    padding: "50px 10px",
+    padding: "50px 10px 100px",
     minHeight: "300px",
     ...container
   },
