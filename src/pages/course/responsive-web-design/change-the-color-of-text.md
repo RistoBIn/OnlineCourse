@@ -1,7 +1,7 @@
 ---
 templateKey: course-page
 title: "Basic CSS: Change the Color of Text"
-order: 0101
+order: 103
 ---
 
 Now let's change the color of some of our text.

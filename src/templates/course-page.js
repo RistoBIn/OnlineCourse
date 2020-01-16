@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql } from 'gatsby'
 import classNames from "classnames";
 import withStyles from "@material-ui/core/styles/withStyles";
 

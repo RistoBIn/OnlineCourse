@@ -18,7 +18,6 @@ import FadeDrop from "components/FadeDrop/FadeDrop.jsx"
 
 
 import landingPageStyle from "assets/jss/material-kit-react/views/landingPage.jsx";
-import window from "global"
 
 const _ = require('lodash')
 

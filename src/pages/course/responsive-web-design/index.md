@@ -1,7 +1,7 @@
 ---
 templateKey: course-page
 title: Introduction
-order: 0100
+order: 102
 ---
 
 ## Introduction 

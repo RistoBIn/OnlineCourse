@@ -1,5 +1,3 @@
-var window = require("global/window")
-
 module.exports = {
   pathPrefix: `/mini-gatsbyv2-material-kit-react`,
   siteMetadata: {
@@ -70,5 +68,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
+    'gatsby-plugin-netlify',
   ],
 }
