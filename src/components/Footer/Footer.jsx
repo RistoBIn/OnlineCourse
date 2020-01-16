@@ -46,7 +46,7 @@ function Footer({ ...props }) {
                   md={6}
                   className={classes.textCenter}
                 >
-                  <Button color="primary">Send Message</Button>
+                  <Button color="primary">Subscribe</Button>
                 </GridItem>
               </GridContainer>
             </form>

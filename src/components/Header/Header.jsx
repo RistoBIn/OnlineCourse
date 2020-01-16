@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'gatsby';
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // nodejs library to set properties for components
@@ -73,7 +74,7 @@ class Header extends React.Component {
       [classes.absolute]: absolute,
       [classes.fixed]: fixed
     });
-    const brandComponent = <Button className={classes.title}><h2>Online Course</h2></Button>;
+    const brandComponent = <Link to="/"><Button className={classes.title}><h2>Online Course</h2></Button></Link>;
     return (
       <AppBar className={appBarClasses}>
         <Toolbar className={classes.container}>
@@ -115,7 +116,6 @@ class Header extends React.Component {
             onClose={this.handleDrawerToggle}
           >
             <div className={classes.appResponsive}>
-              {leftLinks}
               Login
             </div>
           </Drawer>
