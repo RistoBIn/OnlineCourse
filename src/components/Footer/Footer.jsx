@@ -8,6 +8,10 @@ import { List, ListItem, withStyles } from "@material-ui/core";
 
 // @material-ui/icons
 import Favorite from "@material-ui/icons/Favorite";
+import GridContainer from "components/Grid/GridContainer.jsx";
+import GridItem from "components/Grid/GridItem.jsx";
+import CustomInput from "components/CustomInput/CustomInput.jsx";
+import Button from "components/CustomButtons/Button.jsx";
 
 import footerStyle from "assets/jss/material-kit-react/components/footerStyle.jsx";
 
@@ -25,44 +29,27 @@ function Footer({ ...props }) {
     <footer className={footerClasses}>
       <div className={classes.container}>
         <div className={classes.left}>
-          <List className={classes.list}>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://www.creative-tim.com/"
-                className={classes.block}
-                target="_blank"
-              >
-                Creative Tim
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://www.creative-tim.com/presentation"
-                className={classes.block}
-                target="_blank"
-              >
-                About us
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="http://blog.creative-tim.com/"
-                className={classes.block}
-                target="_blank"
-              >
-                Blog
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://www.creative-tim.com/license"
-                className={classes.block}
-                target="_blank"
-              >
-                Licenses
-              </a>
-            </ListItem>
-          </List>
+          <form>
+              <GridContainer>
+                <GridItem xs={6} sm={6} md={6}>
+                  <CustomInput
+                    labelText="Your Email"
+                    id="email"
+                    formControlProps={{
+                      fullWidth: true
+                    }}
+                  />
+                </GridItem>
+                <GridItem
+                  xs={6}
+                  sm={6}
+                  md={6}
+                  className={classes.textCenter}
+                >
+                  <Button color="primary">Send Message</Button>
+                </GridItem>
+              </GridContainer>
+            </form>
         </div>
         <div className={classes.right}>
           &copy; {1900 + new Date().getYear()} , made with{" "}
@@ -72,9 +59,8 @@ function Footer({ ...props }) {
             className={aClasses}
             target="_blank"
           >
-            Creative Tim
-          </a>{" "}
-          for a better web.
+            XXX
+          </a>
         </div>
       </div>
     </footer>

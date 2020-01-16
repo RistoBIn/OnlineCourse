@@ -73,24 +73,28 @@ class Header extends React.Component {
       [classes.absolute]: absolute,
       [classes.fixed]: fixed
     });
-    const brandComponent = <Button className={classes.title}>{brand}</Button>;
+    const brandComponent = <Button className={classes.title}><h2>Online Course</h2></Button>;
     return (
       <AppBar className={appBarClasses}>
         <Toolbar className={classes.container}>
-          {leftLinks !== undefined ? brandComponent : null}
-          <div className={classes.flex}>
-            {leftLinks !== undefined ? (
-              <Hidden smDown implementation="css">
-                {leftLinks}
-              </Hidden>
-            ) : (
-              brandComponent
-            )}
+          <div>
+            <Hidden smDown implementation="css">
+              Search
+            </Hidden>
           </div>
+          <div>
+            <Hidden smDown>
+              {brandComponent}
+            </Hidden>
+          </div>
+            
           <Hidden smDown implementation="css">
-            {rightLinks}
+            Login
           </Hidden>
           <Hidden mdUp>
+            <div className={classes.flex}>
+              <h2>Online Course</h2>
+            </div>
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -112,7 +116,7 @@ class Header extends React.Component {
           >
             <div className={classes.appResponsive}>
               {leftLinks}
-              {rightLinks}
+              Login
             </div>
           </Drawer>
         </Hidden>
