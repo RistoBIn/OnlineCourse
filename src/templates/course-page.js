@@ -28,12 +28,19 @@ class CoursePage extends React.Component {
     let nextCourse = []
     allCourse.edges.forEach((edge, i)=>{
       if (edge.node.frontmatter.title === courseData.frontmatter.title) {
-        prevCourse.push(allCourse.edges[i-1]);
-        nextCourse.push(allCourse.edges[i+1]);
+        if (i=== 0 ) {
+          prevCourse.push("none");
+          nextCourse.push(allCourse.edges[i+1]);
+        } else if(i>0 && i < allCourse.edges.length-1) {
+          prevCourse.push(allCourse.edges[i-1]);
+          nextCourse.push(allCourse.edges[i+1]);
+        } else {
+          prevCourse.push(allCourse.edges[i-1]);
+          nextCourse.push("none")
+        }
       }
     })
-
-    if(prevCourse.length===0){
+    if(prevCourse[0]==="none"){
       return(
         <ButtonWrapper>
           <Link to={nextCourse[0].node.fields.slug}>
@@ -43,7 +50,7 @@ class CoursePage extends React.Component {
           </Link>
         </ButtonWrapper>
       )
-    } else if (nextCourse.length===0) {
+    } else if (nextCourse[0]==="none") {
       return(
         <ButtonWrapper>
           <Link to={prevCourse[0].node.fields.slug}>
